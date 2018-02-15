@@ -56,7 +56,7 @@ public class DefaultExecutors implements IExecutors {
     public DefaultExecutors(final ILogger logger) {
     	this.logger = logger;
         backgroundExecutor = (ThreadPoolExecutor)Executors.newCachedThreadPool();
-        foregroundExecutor = new SynchronousExecutor();
+        foregroundExecutor = SynchronousExecutor.instance();
     }
 
     /**
